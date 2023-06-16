@@ -1,0 +1,33 @@
+{
+  "appEnv_doc": "appEnv is the field that contains the name of the OS environment variable that is used to select a configuration stanza, e.g. dev or prod.",
+  "appEnv": "LILLOP_ENV",
+  "default": {
+    "pgUri": "postgres://admin:admin@localhost:5432/lillop",
+    "pgMetricsName": "pgpool",
+    "maxPoolSize": 2,
+    "appName": "pastum (default)",
+    "tcpPort": 9999,
+    "httpPort": 8080,
+    "logActivity": true,
+    "listenAddress": "127.0.0.1",
+    "webUrlPrefix": "http://localhost:8080",
+    "webRoute": "/:webkey",
+    "useMiniTimeout": true,
+    "miniTimeout": 50,
+    "maxiTimeout": 5000,
+    "saveQuery_doc": "This query takes 2 parameters and returns a generated webkey.",
+    "saveQuery": "INSERT INTO pastum (src_host, pastum, webkey)\nVALUES ($1, $2, array_to_string(ARRAY(SELECT chr((97 + round(random() * 25))::integer) FROM generate_series(1,8)), ''))\nRETURNING id, webkey",
+    "readQuery": "SELECT pastum\nFROM pastum\nWHERE webkey=$1",
+    "dbCountQuery": "SELECT count(*) AS count",
+    "dbHealthQuery": "SELECT current_timestamp",
+    "pasteColumn": "pastum"
+  },
+  "dev": {
+    "appName": "Pastum (development)"
+  },
+  "prod": {
+    "appName": "Pastum",
+    "listenAddress": "0.0.0.0",
+    "webUrlPrefix": "https://pastum.lillop.com"
+  }
+}

@@ -1,0 +1,122 @@
+= About Pastum
+
+image:https://img.shields.io/badge/vert.x-4.4.2-purple.svg[link="https://vertx.io"]
+
+Pastum is for quick & simple bookmarking of small pieces of text from the command line, inspired by http://termbin.com[Termbin].
+
+== Usage
+Raw text is sent over a simple TCP connection, which can then can be read from the HTTP server.
+
+After storing text, Pastum sends a URL then closes the connection.
+
+[source]
+----
+╰─❯ nc localhost 9999 < lipsum
+http://localhost:8080/ychqrful
+
+╰─❯ curl http://localhost:8080/ychqrful
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id arcu nisi. Quisque imperdiet placerat sollicitudin. Suspendisse aliquam tellus ut aliquet tristique. Ut varius risus a augue hendrerit sodales. Quisque eu nisi pharetra, sodales ipsum nec, laoreet massa. Nulla bibendum orci non nibh mollis tincidunt. Donec at eleifend mi. Morbi egestas augue imperdiet leo aliquet mattis. Fusce lobortis lobortis scelerisque. Donec id est et libero pretium scelerisque a eget lectus. Nam orci magna, viverra a sagittis vitae, tristique a felis. Suspendisse consectetur tortor eleifend purus efficitur tristique.
+----
+
+== Security and Hosting
+Production environments should use a proxy such as Caddy or NginX to terminate TLS/HTTPS in front of Pastum. Configure `webUrlPrefix` to the public URL root proxied to Pastum. The TCP listener can be exposed directly or via TCP proxy.
+
+A PostgreSQL server is required _somewhere_ this service can connect to. The connection URI ("pgUri") is stored in `config.json`. A configuration example is in the Deployment section of this document.
+
+Runtime Dependencies:
+
+* Java (JDK 17+)
+
+=== Monitoring
+
+The following HTTP paths are used for monitoring, and should be blocked from public access:
+
+* /health*
+* /metrics*
+
+The `/metrics` path is configured for Prometheus until something else is needed. The `/health` path is intended for use with e.g. node_exporter until there's a reason to do everything with Micrometer/Prometheus.
+
+== Deployment by example
+
+=== Configuration
+Pastum comes with `dev` and `prod` environment templates in `src/main/resources/conf/template.config.json`.
+
+To configure your database in `prod`:
+
+* Set PGCONNECTIONURI
+* Use _jq_ to rewrite the `prod` (or `dev`) stanza of the template to create `src/main/resources/conf/config.json`
+
+[source]
+----
+╰─❯ PGCONNECTIONURI="postgresql://admin:admin@localhost:5432/lillop"
+
+╰─❯ jq ".prod.pgUri=\""$PGCONNECTIONURI"\"" < template.config.json > src/main/resources/conf/config.json
+----
+
+The rest of the configuration variables may be set similarly, or just copy the template to `src/main/resources/conf/config.json` and edit manually.
+
+=== Execution
+Set LILLOP_ENV to `prod` via the process environment or the Java properties. The name of this environment variable may be changed by altering `.appEnv` in config.json.
+
+Examples:
+
+[source]
+----
+╰─❯ java -DLILLOP_ENV=prod -jar target/pastum-1.0.0-SNAPSHOT-fat.jar
+----
+[source]
+----
+╰─❯ LILLOP_ENV=prod java -jar target/pastum-1.0.0-SNAPSHOT-fat.jar
+----
+
+== Maven Targets
+
+To launch your tests:
+
+[source]
+----
+./mvnw clean test
+----
+
+To package your application:
+
+[source]
+----
+./mvnw clean package
+----
+
+To run your application:
+
+[source]
+----
+./mvnw clean compile exec:java
+----
+
+
+== Motivation
+
+I like building things that work and Vert.x really satisfies.
+
+Template projects from https://start.vertx.io are excellent foundations, but I want a project stub with even more opinionated batteries included, specifically:
+
+* Full-cycle configuration management
+** Search classpath and CWD for conf/config.json
+** Config delivered to verticles through deployment descriptor
+* Web
+* Metrics
+* Database access (Postgres, of course)
+
+== What's next?
+
+* Redesign for testability
+* Config listener
+** Config bus
+** Signal handler
+* Bundle for consulting
+* Integrate a frontend, maybe Tabler if not something less opinionated like NextJS/SOLID/Svelte/HTMX/ClojureScript
+* Cloud bundle
+** Jib
+** etcd
+** Vault
+** Metrics options
+** Logging options
