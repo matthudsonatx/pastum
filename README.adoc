@@ -38,7 +38,7 @@ The `/metrics` path is configured for Prometheus until something else is needed.
 
 == Deployment by example
 
-=== Configuration
+=== Automated Configuration
 Pastum comes with `dev` and `prod` environment templates in `src/main/resources/conf/template.config.json`.
 
 To configure your database in `prod`:
@@ -53,7 +53,10 @@ To configure your database in `prod`:
 ╰─❯ jq ".prod.pgUri=\""$PGCONNECTIONURI"\"" < template.config.json > src/main/resources/conf/config.json
 ----
 
-The rest of the configuration variables may be set similarly, or just copy the template to `src/main/resources/conf/config.json` and edit manually.
+The rest of the configuration variables may be set similarly
+
+=== Manual Configuration
+Copy `template.config.json` to `src/main/resources/conf/config.json` then edit.
 
 === Execution
 Set LILLOP_ENV to `prod` via the process environment or the Java properties. The name of this environment variable may be changed by altering `.appEnv` in config.json.
