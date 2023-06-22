@@ -3,48 +3,48 @@
     <output-path>$PROJECT_DIR$/out/artifacts/pastum_jar</output-path>
     <root id="archive" name="pastum.jar">
       <element id="module-output" name="pastum" />
+      <element id="library" level="project" name="Maven: io.vertx:vertx-core:4.4.4" />
+      <element id="library" level="project" name="Maven: io.netty:netty-common:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-buffer:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-handler:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport-native-unix-common:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-handler-proxy:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec-socks:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec-http:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec-http2:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-resolver:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-resolver-dns:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec-dns:4.1.94.Final" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.15.0" />
+      <element id="library" level="project" name="Maven: io.vertx:vertx-config:4.4.4" />
+      <element id="library" level="project" name="Maven: io.vertx:vertx-web:4.4.4" />
+      <element id="library" level="project" name="Maven: io.vertx:vertx-web-common:4.4.4" />
+      <element id="library" level="project" name="Maven: io.vertx:vertx-auth-common:4.4.4" />
+      <element id="library" level="project" name="Maven: io.vertx:vertx-bridge-common:4.4.4" />
+      <element id="library" level="project" name="Maven: io.vertx:vertx-health-check:4.4.4" />
+      <element id="library" level="project" name="Maven: io.vertx:vertx-pg-client:4.4.4" />
+      <element id="library" level="project" name="Maven: io.vertx:vertx-sql-client:4.4.4" />
+      <element id="library" level="project" name="Maven: io.vertx:vertx-micrometer-metrics:4.4.4" />
+      <element id="library" level="project" name="Maven: io.micrometer:micrometer-core:1.10.7" />
+      <element id="library" level="project" name="Maven: io.micrometer:micrometer-commons:1.10.7" />
+      <element id="library" level="project" name="Maven: io.micrometer:micrometer-observation:1.10.7" />
+      <element id="library" level="project" name="Maven: org.latencyutils:LatencyUtils:2.0.3" />
+      <element id="library" level="project" name="Maven: org.hdrhistogram:HdrHistogram:2.1.12" />
+      <element id="library" level="project" name="Maven: io.micrometer:micrometer-registry-prometheus:1.11.0" />
+      <element id="library" level="project" name="Maven: io.prometheus:simpleclient_common:0.16.0" />
+      <element id="library" level="project" name="Maven: io.prometheus:simpleclient:0.16.0" />
+      <element id="library" level="project" name="Maven: io.prometheus:simpleclient_tracer_otel:0.16.0" />
+      <element id="library" level="project" name="Maven: io.prometheus:simpleclient_tracer_common:0.16.0" />
+      <element id="library" level="project" name="Maven: io.prometheus:simpleclient_tracer_otel_agent:0.16.0" />
       <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.11" />
       <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.11" />
-      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.15.0" />
+      <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.21" />
       <element id="library" level="project" name="Maven: com.ongres.scram:client:2.1" />
       <element id="library" level="project" name="Maven: com.ongres.scram:common:2.1" />
       <element id="library" level="project" name="Maven: com.ongres.stringprep:saslprep:1.1" />
       <element id="library" level="project" name="Maven: com.ongres.stringprep:stringprep:1.1" />
-      <element id="library" level="project" name="Maven: io.micrometer:micrometer-commons:1.10.7" />
-      <element id="library" level="project" name="Maven: io.micrometer:micrometer-core:1.10.7" />
-      <element id="library" level="project" name="Maven: io.micrometer:micrometer-observation:1.10.7" />
-      <element id="library" level="project" name="Maven: io.micrometer:micrometer-registry-prometheus:1.11.0" />
-      <element id="library" level="project" name="Maven: io.netty:netty-buffer:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-codec-dns:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-codec-http2:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-codec-http:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-codec-socks:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-codec:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-common:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-handler-proxy:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-handler:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-resolver-dns:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-resolver:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-transport-native-unix-common:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.netty:netty-transport:4.1.93.Final" />
-      <element id="library" level="project" name="Maven: io.prometheus:simpleclient:0.16.0" />
-      <element id="library" level="project" name="Maven: io.prometheus:simpleclient_common:0.16.0" />
-      <element id="library" level="project" name="Maven: io.prometheus:simpleclient_tracer_common:0.16.0" />
-      <element id="library" level="project" name="Maven: io.prometheus:simpleclient_tracer_otel:0.16.0" />
-      <element id="library" level="project" name="Maven: io.prometheus:simpleclient_tracer_otel_agent:0.16.0" />
-      <element id="library" level="project" name="Maven: io.vertx:vertx-auth-common:4.4.3" />
-      <element id="library" level="project" name="Maven: io.vertx:vertx-bridge-common:4.4.3" />
-      <element id="library" level="project" name="Maven: io.vertx:vertx-config:4.4.3" />
-      <element id="library" level="project" name="Maven: io.vertx:vertx-core:4.4.3" />
-      <element id="library" level="project" name="Maven: io.vertx:vertx-health-check:4.4.3" />
-      <element id="library" level="project" name="Maven: io.vertx:vertx-micrometer-metrics:4.4.3" />
-      <element id="library" level="project" name="Maven: io.vertx:vertx-pg-client:4.4.3" />
-      <element id="library" level="project" name="Maven: io.vertx:vertx-sql-client:4.4.3" />
-      <element id="library" level="project" name="Maven: io.vertx:vertx-web-common:4.4.3" />
-      <element id="library" level="project" name="Maven: io.vertx:vertx-web:4.4.3" />
-      <element id="library" level="project" name="Maven: org.hdrhistogram:HdrHistogram:2.1.12" />
-      <element id="library" level="project" name="Maven: org.latencyutils:LatencyUtils:2.0.3" />
-      <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.21" />
     </root>
   </artifact>
 </component>
