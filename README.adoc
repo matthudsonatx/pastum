@@ -1,6 +1,6 @@
 = About Pastum
 
-image:https://img.shields.io/badge/vert.x-4.4.4-purple.svg[link="https://vertx.io"]
+image:https://img.shields.io/badge/vert.x-4.4.5-purple.svg[link="https://vertx.io"]
 
 Pastum is for quick & simple bookmarking of small pieces of text from the command line, inspired by http://termbin.com[Termbin].
 
